@@ -9,12 +9,14 @@ function App() {
   useEffect(() => {
     const fetchNews = async() => {
       try{
-        const response = await fetch("/route/get");
+        const response = await fetch("http://localhost:8080/route/get");
+        console.log(response);
         if (!response.ok){
           throw new Error("Failed to fetch news from server..");
         }
-        const result = await response.json();
-        setNews(result);
+        // const result = await response.json();
+        // console.log(result);
+        // setNews(result);
       } catch (error){
         console.error("Error: ", error);
       } finally {

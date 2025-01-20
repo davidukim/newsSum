@@ -1,6 +1,6 @@
 package com.example.springBackEnd.service;
 
-import com.example.springBackEnd.model.NewsResponse;
+import com.example.springBackEnd.model.Article;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class NewsService {
     @Autowired
-    private NewsResponse response;
+    private Article response;
 
-    public NewsResponse fetchNews(){
+    public Article fetchNews(){
 
         return response;
     }

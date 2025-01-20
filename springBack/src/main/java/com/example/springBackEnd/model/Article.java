@@ -2,6 +2,6 @@ package com.example.springBackEnd.model;
 
 import java.util.ArrayList;
 
-public class NewsResponse {
+public class Article {
     public ArrayList<String> response;
 }

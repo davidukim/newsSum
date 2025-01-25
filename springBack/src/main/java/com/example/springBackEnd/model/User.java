@@ -17,7 +17,7 @@ public class User {
   private Long id;
   private String userName;
   private String password;
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Article> articles = new ArrayList<>();
 
   protected User() {}
@@ -45,4 +45,17 @@ public class User {
   public String getpassword() {
     return password;
   }
+
+  public List<Article> getArticles(){
+      return this.articles;
+  }
+
+  public void setUserName(String userName){
+    this.userName = userName;
+  }
+
+  public void setPassword(String password){
+    this.password = password;
+  }
+
 }

@@ -1,8 +1,12 @@
 package com.example.springBackEnd.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
 
-public class UserRepository {
-    
+import com.example.springBackEnd.model.User;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long>{
+    Optional<User> findById(Long id);
 }
 

@@ -1,16 +1,15 @@
 import logo from '../logo.svg';
 
-function Loading() {
+export function Loading() {
     return (
     <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Now loading ... 
+            fetcing news ... 
           </p>
         </header>
     </div>
     )
 }
 
-export default Loading;

@@ -18,7 +18,7 @@ public class NewsService {
     private final String NEWS_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=f0413017cc0c45e69113bddad4383d57";
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Scheduled(fixedRate = 1500000) // fetch every 5min
+    @Scheduled(fixedRate = 15000000) // fetch every 5min
     public List<Article> fetchNews(){
 
         try{

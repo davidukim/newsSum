@@ -7,9 +7,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
+@Table(name = "articles")
 public class Article {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,7 +27,7 @@ public class Article {
     @ManyToOne
     private User user;
 
-    public Article(){}
+    protected Article(){}
 
     public Article(Source source, String author, String title, String description, 
                     String url, String urlToImage, String publishedAt, String content, User user) {

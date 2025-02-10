@@ -1,11 +1,13 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import Loading from './components/Loading';
-import { MainPage } from './pages/mainPage';
+import {LoggedOutPage, LoggedInPage} from './pages';  
+import { Loading } from './components/Loading';
+
 
 function App() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchNews = async() => {
@@ -26,7 +28,8 @@ function App() {
     fetchNews();
   }, [])
 
-  if (loading) return <Loading/>
-  return (<MainPage news={news}/>)
+  return (loading ? <Loading/>: 
+    loggedIn ? <LoggedInPage news={news}/> : <LoggedOutPage news={news}/> )
+  
 }
 export default App;
